@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">LOG330.TP1.EX1</string>
+    <string name="title_item_detail">LOG330.TP1.EX1</string>
+    <string name="title_item_list">LOG330.TP1.EX1</string>
+    <string name="results">Results</string>
+    <string name="teams">Teams</string>
+    <string name="players">Players</string>
+    <string name="player_name">Player Name</string>
+    <string name="number">Number</string>
+    <string name="team_name">Team Name</string>    
+    
+</resources>
