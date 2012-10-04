@@ -1,14 +1,49 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"  
     android:layout_width="fill_parent" android:layout_height="fill_parent"  
     android:orientation="vertical">
     
-     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-   xmlns:tools="http://schemas.android.com/tools"
-    style="?android:attr/textAppearanceLarge"
-    android:id="@+id/item_detail"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:padding="16dp"
-    tools:context=".ItemDetailFragment" />
-     
-</LinearLayout>
+    <TableRow android:id="@+id/score_row"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <TextView android:id="@+id/score_text"/>
+        
+    </TableRow>
+    
+    <TableRow android:id="@+id/commands_row"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <TextView android:id="@+id/period_text"
+            android:text="@string/period"
+            />
+        
+        <Button android:id="@+id/period_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/next_period"
+		    />
+        
+        <Button android:id="@+id/goal_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/add_goal"
+		    />
+    </TableRow>
+    
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+	    android:id="@+id/gridview"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:columnWidth="90dp"
+	    android:numColumns="4"
+	    android:verticalSpacing="10dp"
+	    android:horizontalSpacing="10dp"
+	    android:stretchMode="columnWidth"
+	    android:gravity="center"
+	/>
+    
+</TableLayout>

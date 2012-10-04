@@ -22,11 +22,12 @@ public class ItemDetailFragment extends Fragment {
             mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
-
+    
     @Override
     public android.view.View onCreateView(LayoutInflater inflater, android.view.ViewGroup container,
             Bundle savedInstanceState) {
     	android.view.View rootView = null;
+    	
     	
         if (mItem != null) {
         	if (mItem.content.equalsIgnoreCase(getString(R.string.players))) {
@@ -96,7 +97,7 @@ public class ItemDetailFragment extends Fragment {
         	} else if (mItem.content.equalsIgnoreCase(getString(R.string.teams))) {
 
         	} else if (mItem.content.equalsIgnoreCase(getString(R.string.results))) {
-
+        		rootView = inflater.inflate(R.layout.results_layout, container, false);
         	}
         	// TODO HERE IS THE JOB TO DO :P
         	// for other tabs

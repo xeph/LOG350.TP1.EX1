@@ -1,5 +1,6 @@
+package com.log330.tp1.ex1.DB;
 
-public class Start {
+public class test {
 
 	public static void main(String[] args) {
 		

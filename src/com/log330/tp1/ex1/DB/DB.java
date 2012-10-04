@@ -1,3 +1,5 @@
+package com.log330.tp1.ex1.DB;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;

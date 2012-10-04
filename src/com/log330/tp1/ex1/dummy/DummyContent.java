@@ -28,8 +28,7 @@ public class DummyContent {
 
     static {
         addItem(new DummyItem("1", "Results"));
-        addItem(new DummyItem("2", "Teams"));
-        addItem(new DummyItem("3", "Players"));
+        addItem(new DummyItem("2", "Players"));
     }
 
     private static void addItem(DummyItem item) {

@@ -1,3 +1,4 @@
+package com.log330.tp1.ex1.DB;
 
 public class Player implements Comparable<Player> {
 	private int num;

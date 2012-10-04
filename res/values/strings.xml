@@ -15,5 +15,8 @@
     <string name="pirates">Pirates</string>
     <string name="ninjas">Ninjas</string>
     <string name="No">#</string>
+    <string name="period">Period:#</string>
+    <string name="next_period">Next Period</string>
+    <string name="add_goal">Add Goal</string>
     
 </resources>
