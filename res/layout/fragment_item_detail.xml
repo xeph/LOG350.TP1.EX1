@@ -25,6 +25,13 @@
     android:hint="@string/number"
     android:inputType="number" />
   
+ <EditText
+    android:id="@+id/team_name"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/team_name"
+    android:inputType="none" />
+  
    <Button xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
      android:id="@+id/my_button"

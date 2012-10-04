@@ -9,5 +9,11 @@
     <string name="player_name">Player Name</string>
     <string name="number">Number</string>
     <string name="team_name">Team Name</string>    
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="name">Name</string>
+    <string name="pirates">Pirates</string>
+    <string name="ninjas">Ninjas</string>
+    <string name="No">#</string>
     
 </resources>

@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+    android:layout_width="fill_parent" android:layout_height="fill_parent"  
+    android:orientation="vertical">
+    
+    <TableRow android:id="@+id/player1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player1_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player1_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player1_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player2_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player2_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player2_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player3_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas3"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player3_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player3_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player4_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates4"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas4"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player4_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player4_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player5_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates5"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas5"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player5_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player5_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player6_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates6"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas6"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player6_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player6_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player7_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates7"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas7"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player7_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player7_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player8_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates8"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas8"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player8_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player8_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/player9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player9_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates9"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas9"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player9_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player9_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+   <TableRow android:id="@+id/player10"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <EditText
+            android:id="@+id/player10_number"
+            android:layout_width="50dp"
+    		android:layout_height="wrap_content"
+    		android:inputType="number"
+            android:hint="@string/No"/>
+        
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <RadioButton android:id="@+id/radio_pirates10"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/pirates"
+		        android:onClick="onRadioButtonClicked"/>
+		    <RadioButton android:id="@+id/radio_ninjas10"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/ninjas"
+		        android:onClick="onRadioButtonClicked"/>
+    	</RadioGroup>
+        
+        <EditText
+            android:id="@+id/player10_name"
+            android:layout_width="500dp"
+    		android:layout_height="wrap_content"
+            android:hint="@string/name"/>
+        
+        <ToggleButton 
+		    android:id="@+id/player10_onice"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:textOn="On Ice"
+		    android:textOff="Not On Ice"
+		    android:onClick="onToggleClicked"/>        
+    </TableRow>
+    
+    <TableRow android:id="@+id/button_row"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+        
+        <Button xmlns:android="http://schemas.android.com/apk/res/android"
+    		xmlns:tools="http://schemas.android.com/tools"
+		     android:id="@+id/ok_button"
+		     android:layout_width="fill_parent"
+		     android:layout_height="wrap_content"
+		     android:text="@string/ok"
+		     tools:context=".ItemDetailFragment" />
+        
+        <Button xmlns:android="http://schemas.android.com/apk/res/android"
+    		xmlns:tools="http://schemas.android.com/tools"
+		     android:id="@+id/cancel_button"
+		     android:layout_width="fill_parent"
+		     android:layout_height="wrap_content"
+		     android:text="@string/cancel"
+		     tools:context=".ItemDetailFragment" />
+    </TableRow>
+    
+</TableLayout>
