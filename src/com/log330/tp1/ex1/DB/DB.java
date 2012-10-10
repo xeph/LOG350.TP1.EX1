@@ -13,7 +13,7 @@ public class DB {
 	private HashMap<Integer, Player> playersRED = new HashMap<Integer, Player>();
 	private HashMap<Integer, Player> playersBLU = new HashMap<Integer, Player>();
 	private ArrayList<Game> oldGames = new ArrayList<Game>();
-	private Game game = null;
+	private Game game = new Game();
 	
 	private DB(){
 	}
@@ -108,9 +108,7 @@ public class DB {
 	
 	public Game newGame(){
 		Game oGame = new Game();
-		if (this.game != null){
 			this.oldGames.add(this.game);
-		}
 		this.game = oGame;
 		return oGame;
 	}
