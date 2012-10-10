@@ -9,6 +9,7 @@ public class Player implements Comparable<Player> {
 	
 	public Player(Integer num, String fname, String name, Integer team, Boolean onIce){
 		this.num = num;
+		this.fname = fname;
 		this.name = name;
 		this.team = team;
 		this.onIce = onIce;
