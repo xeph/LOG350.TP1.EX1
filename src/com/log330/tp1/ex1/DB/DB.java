@@ -7,11 +7,11 @@ import java.util.HashMap;
 
 public class DB {
 	private static DB instance = new DB();
-	public static int TEAMRED = 1;
-	public static int TEAMBLUE = 2;
+	public static Integer TEAMRED = 1;
+	public static Integer TEAMBLU = 2;
 	private HashMap<Integer, Player> players = new HashMap<Integer, Player>();
 	private HashMap<Integer, Player> playersRED = new HashMap<Integer, Player>();
-	private HashMap<Integer, Player> playersBLUE = new HashMap<Integer, Player>();
+	private HashMap<Integer, Player> playersBLU = new HashMap<Integer, Player>();
 	private ArrayList<Game> oldGames = new ArrayList<Game>();
 	private Game game = null;
 	
@@ -22,40 +22,48 @@ public class DB {
 		return DB.instance;
 	}
 	
-	public void removePlayer(int index){
+	public void removePlayer(Integer index){
 		Player oPlayer = this.players.get(index);
 		if (oPlayer != null){
-			if (oPlayer.getTeam() == DB.TEAMRED){
-				this.playersRED.remove(oPlayer.getNum());
-			}else if (oPlayer.getTeam() == DB.TEAMBLUE){
-				this.playersBLUE.remove(oPlayer.getNum());
+			if (oPlayer.team == DB.TEAMRED){
+				this.playersRED.remove(oPlayer.num);
+			}else if (oPlayer.team == DB.TEAMBLU){
+				this.playersBLU.remove(oPlayer.num);
 			}
 			this.players.remove(index);
 		}
 	}
 	
-	public void setPlayer(int index, int num, String name, int team){
-		Player oPlayer = new Player(num, name, team);
-		this.players.put(index, oPlayer);
-		if (team == DB.TEAMRED){
-			this.playersRED.put(num, oPlayer);
-		}else if (team == DB.TEAMBLUE){
-			this.playersBLUE.put(num, oPlayer);
+	public void setPlayer(Integer index, Integer num, String fname, String name, Integer team, Boolean onIce){
+		Player sPlayer = this.players.get(index);
+		if (sPlayer != null){
+			if (num != null) sPlayer.num = num;
+			if (fname != null) sPlayer.fname = fname;
+			if (name != null) sPlayer.name = name;
+			if (onIce != null) sPlayer.onIce = onIce;
+		}else{
+			Player oPlayer = new Player(num, fname, name, team, onIce);
+			this.players.put(index, oPlayer);
+			if (team == DB.TEAMRED){
+				this.playersRED.put(num, oPlayer);
+			}else if (team == DB.TEAMBLU){
+				this.playersBLU.put(num, oPlayer);
+			}
 		}
 	}
 	
-	public Player getPlayerByIndex(int index){
+	public Player getPlayerByIndex(Integer index){
 		return this.players.get(index);
 	}
 	
-	public Player getPlayerByNum(int num, int team){
+	public Player getPlayerByNum(Integer num, Integer team){
 		if (team == DB.TEAMRED){
 			return this.playersRED.get(num);
-		}else if(team == DB.TEAMBLUE){
-			return this.playersBLUE.get(num);
+		}else if(team == DB.TEAMBLU){
+			return this.playersBLU.get(num);
 		}else{
 			for (Player x : this.players.values()){
-				if (x.getNum() == num){
+				if (x.num == num){
 					return x;
 				}
 			}
@@ -65,11 +73,25 @@ public class DB {
 	
 	public Player getPlayerByName(String name){
 		for (Player x : this.players.values()){
-			if (x.getName().equals(name)){
+			if (x.name.equals(name)){
 				return x;
 			}
 		}
 		return null;
+	}
+	
+	public ArrayList<Player> playersOnIce(Integer team){
+		ArrayList<Player> ret = new ArrayList<Player>();
+		if (team == DB.TEAMRED){
+			for (Player x : this.playersRED.values()){
+				ret.add(x);
+			}
+		}else if (team == DB.TEAMBLU){
+			for (Player x : this.playersBLU.values()){
+				ret.add(x);
+			}
+		}
+		return ret;
 	}
 	
 	public HashMap<Integer, ArrayList<Player>> getAllPlayers(){
@@ -78,9 +100,9 @@ public class DB {
 		ArrayList<Player> RED = new ArrayList<Player>(this.playersRED.values());
 		Collections.sort(RED);
 		ret.put(DB.TEAMRED, RED);
-		ArrayList<Player> BLUE = new ArrayList<Player>(this.playersBLUE.values());
-		Collections.sort(BLUE);
-		ret.put(DB.TEAMBLUE, BLUE);
+		ArrayList<Player> BLU = new ArrayList<Player>(this.playersBLU.values());
+		Collections.sort(BLU);
+		ret.put(DB.TEAMBLU, BLU);
 		return ret;
 	}
 	
@@ -93,26 +115,26 @@ public class DB {
 		return oGame;
 	}
 	
-	public int getPeriod(){
+	public Integer getPeriod(){
 		return this.game.getPeriod();
 	}
 	
-	public int nextPeriod(){
+	public Integer nextPeriod(){
 		if (this.game == null){
 			return Game.GAMENOTCREATED;
 		}
 		return this.game.nextPeriod();
 	}
 	
-	public int getWinner(){
+	public Integer getWinner(){
 		return this.game.getWinner();
 	}
 	
-	public void addGoal(Player player, Player assist, int time){
-		this.game.addGoal(player, assist, time);
+	public void addGoal(Player player, Player assist, Player assist2){
+		this.game.addGoal(player, assist, assist2, this.game.getPeriod());
 	}
 	
-	public ArrayList<Goal> getGoals(){
+	public ArrayList<String> getGoals(){
 		return this.game.getGoals();
 	}
 	
@@ -120,7 +142,7 @@ public class DB {
 		return this.game.getScore();
 	}
 	
-	public HashMap<Integer, Player> getTop(){
+	public ArrayList<Player> getTop(){
 		return this.game.getTop();
 	}
 	

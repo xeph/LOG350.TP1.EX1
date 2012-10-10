@@ -4,33 +4,35 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		DB.getInstance().setPlayer(0, 10, "A A", DB.TEAMRED);
-		DB.getInstance().setPlayer(1, 20, "B B", DB.TEAMRED);
-		DB.getInstance().setPlayer(2, 30, "C C", DB.TEAMRED);
-		DB.getInstance().setPlayer(5, 60, "D D", DB.TEAMBLUE);
-		DB.getInstance().setPlayer(6, 70, "E E", DB.TEAMBLUE);
-		DB.getInstance().setPlayer(7, 80, "F F", DB.TEAMBLUE);
+		DB.getInstance().setPlayer(0, 10, "A", "A", DB.TEAMRED, true);
+		DB.getInstance().setPlayer(1, 20, "B", "B", DB.TEAMRED, true);
+		DB.getInstance().setPlayer(2, 30, "C", "C", DB.TEAMRED, true);
+		DB.getInstance().setPlayer(5, 60, "D", "D", DB.TEAMBLU, true);
+		DB.getInstance().setPlayer(6, 70, "E", "E", DB.TEAMBLU, true);
+		DB.getInstance().setPlayer(7, 80, "F", "F", DB.TEAMBLU, true);
 		System.out.println(DB.getInstance().getAllPlayers().toString());
 		
 		DB.getInstance().newGame();
-		DB.getInstance().addGoal(DB.getInstance().getPlayerByNum(10, DB.TEAMRED), null, 5);
-		DB.getInstance().addGoal(DB.getInstance().getPlayerByNum(20, DB.TEAMRED), null, 15);
+		DB.getInstance().addGoal(DB.getInstance().getPlayerByNum(10, DB.TEAMRED), DB.getInstance().getPlayerByNum(20, DB.TEAMRED), null);
+		DB.getInstance().addGoal(DB.getInstance().getPlayerByNum(20, DB.TEAMRED), null, null);
 		System.out.println(DB.getInstance().getScore().toString());
 		
 		System.out.println(DB.getInstance().getPeriod());
 		DB.getInstance().nextPeriod();
 		System.out.println(DB.getInstance().getPeriod());
 		
-		System.out.println(DB.getInstance().getGoals().toString());
+		System.out.println("Goals:"+DB.getInstance().getGoals().toString());
 		
 		DB.getInstance().nextPeriod();
 		DB.getInstance().nextPeriod();
-		System.out.println(DB.getInstance().getWinner());
+		System.out.println("Winner:"+DB.getInstance().getWinner());
+		
+		System.out.println("Top:"+DB.getInstance().getTop());
 		
 		DB.getInstance().newGame();
-		System.out.println(DB.getInstance().getGoals().toString());
+		System.out.println("Goals:"+DB.getInstance().getGoals().toString());
 		
-		System.out.println(DB.getInstance().getTop());
+		
 	}
 
 }
