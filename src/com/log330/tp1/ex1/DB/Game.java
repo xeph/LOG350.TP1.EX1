@@ -77,12 +77,18 @@ public class Game {
 		}
 		ArrayList<Player> ret = new ArrayList<Player>();
 		HashMap<Player, Integer> points = new HashMap<Player, Integer>();
+		HashMap<Player, Integer> goals = new HashMap<Player, Integer>();
 		
 		for (Goal x : this.goals){
 			if (points.get(x.scorer) != null){
-				points.put(x.scorer, points.get(x.scorer)+2);
+				points.put(x.scorer, points.get(x.scorer)+1);
 			}else{
 				points.put(x.scorer, 2);
+			}
+			if (goals.get(x.scorer) != null){
+				goals.put(x.scorer, goals.get(x.scorer)+2);
+			}else{
+				goals.put(x.scorer, 1);
 			}
 			if (x.assist != null){
 				if (points.get(x.assist) != null){
@@ -105,17 +111,29 @@ public class Game {
 		Entry<Player, Integer> two = new AbstractMap.SimpleEntry<Player, Integer>(null, 0);
 		Entry<Player, Integer> three = new AbstractMap.SimpleEntry<Player, Integer>(null, 0);
 		for (Entry<Player, Integer> x : points.entrySet()){
-			if ((x.getValue() > one.getValue()) ||
+			if (
+					(x.getValue() > one.getValue()) ||
 					(x.getValue() == one.getValue() && x.getKey().team == DB.getInstance().getWinner()) ||
-					(x.getValue() == x.getValue() && x.getKey().team != DB.getInstance().getWinner())
-					){
+					(x.getValue() == x.getValue() && x.getKey().team != DB.getInstance().getWinner() && 
+						(goals.get(x.getKey()) != null ? goals.get(x.getKey()) : 0) > (goals.get(one) != null ? goals.get(one) : 0))
+				){
 				three = two;
 				two = one;
 				one = x;
-			}else if (x.getValue() > two.getValue()){
+			}else if (
+					(x.getValue() > two.getValue()) ||
+					(x.getValue() == two.getValue() && x.getKey().team == DB.getInstance().getWinner()) ||
+					(x.getValue() == x.getValue() && x.getKey().team != DB.getInstance().getWinner() && 
+						(goals.get(x.getKey()) != null ? goals.get(x.getKey()) : 0) > (goals.get(two) != null ? goals.get(two) : 0))
+				){
 				three = two;
 				two = x;
-			}else if (x.getValue() > three.getValue()){
+			}else if (
+					(x.getValue() > three.getValue()) ||
+					(x.getValue() == three.getValue() && x.getKey().team == DB.getInstance().getWinner()) ||
+					(x.getValue() == x.getValue() && x.getKey().team != DB.getInstance().getWinner() && 
+						(goals.get(x.getKey()) != null ? goals.get(x.getKey()) : 0) > (goals.get(three) != null ? goals.get(three) : 0))
+				){
 				three = x;
 			}
 		}
