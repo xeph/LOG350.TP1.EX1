@@ -134,7 +134,7 @@ public class DB {
 		return this.game.getGoals();
 	}
 	
-	public HashMap<String, Integer> getScore(){
+	public HashMap<Integer, Integer> getScore(){
 		return this.game.getScore();
 	}
 	

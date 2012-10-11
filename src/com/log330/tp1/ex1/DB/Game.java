@@ -64,10 +64,10 @@ public class Game {
 		return ret;
 	}
 	
-	public HashMap<String, Integer> getScore(){
-		HashMap<String, Integer> ret = new HashMap<String, Integer>();
-		ret.put("RED", this.scoreRED);
-		ret.put("BLU", this.scoreBLU);
+	public HashMap<Integer, Integer> getScore(){
+		HashMap<Integer, Integer> ret = new HashMap<Integer, Integer>();
+		ret.put(DB.TEAMRED, this.scoreRED);
+		ret.put(DB.TEAMBLU, this.scoreBLU);
 		return ret;
 	}
 	
