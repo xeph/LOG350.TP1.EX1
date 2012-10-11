@@ -4,12 +4,12 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		DB.getInstance().setPlayer(0, 10, "A", "A", DB.TEAMRED, true);
-		DB.getInstance().setPlayer(1, 20, "B", "B", DB.TEAMRED, true);
-		DB.getInstance().setPlayer(2, 30, "C", "C", DB.TEAMRED, true);
-		DB.getInstance().setPlayer(5, 60, "D", "D", DB.TEAMBLU, true);
-		DB.getInstance().setPlayer(6, 70, "E", "E", DB.TEAMBLU, true);
-		DB.getInstance().setPlayer(7, 80, "F", "F", DB.TEAMBLU, true);
+		DB.getInstance().setPlayer(10, "A", "A", DB.TEAMRED, true);
+		DB.getInstance().setPlayer(20, "B", "B", DB.TEAMRED, true);
+		DB.getInstance().setPlayer(30, "C", "C", DB.TEAMRED, true);
+		DB.getInstance().setPlayer(60, "D", "D", DB.TEAMBLU, true);
+		DB.getInstance().setPlayer(70, "E", "E", DB.TEAMBLU, true);
+		DB.getInstance().setPlayer(80, "F", "F", DB.TEAMBLU, true);
 		System.out.println(DB.getInstance().getAllPlayers().toString());
 		
 		DB.getInstance().newGame();

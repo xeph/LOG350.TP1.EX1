@@ -9,6 +9,7 @@ public class DB {
 	private static DB instance = new DB();
 	public static Integer TEAMRED = 1;
 	public static Integer TEAMBLU = 2;
+	private static Integer seq = 0;
 	private HashMap<Integer, Player> players = new HashMap<Integer, Player>();
 	private HashMap<Integer, Player> playersRED = new HashMap<Integer, Player>();
 	private HashMap<Integer, Player> playersBLU = new HashMap<Integer, Player>();
@@ -22,38 +23,21 @@ public class DB {
 		return DB.instance;
 	}
 	
-	public void removePlayer(Integer index){
-		Player oPlayer = this.players.get(index);
-		if (oPlayer != null){
-			if (oPlayer.team == DB.TEAMRED){
-				this.playersRED.remove(oPlayer.num);
-			}else if (oPlayer.team == DB.TEAMBLU){
-				this.playersBLU.remove(oPlayer.num);
-			}
-			this.players.remove(index);
-		}
-	}
-	
-	public void setPlayer(Integer index, Integer num, String fname, String name, Integer team, Boolean onIce){
-		Player sPlayer = this.players.get(index);
+	public void setPlayer(Integer num, String fname, String name, Integer team, Boolean onIce){
+		Player sPlayer = this.getPlayerByNum(num, team);
 		if (sPlayer != null){
-			if (num != null) sPlayer.num = num;
 			if (fname != null) sPlayer.fname = fname;
 			if (name != null) sPlayer.name = name;
 			if (onIce != null) sPlayer.onIce = onIce;
 		}else{
 			Player oPlayer = new Player(num, fname, name, team, onIce);
-			this.players.put(index, oPlayer);
+			this.players.put(seq++, oPlayer);
 			if (team == DB.TEAMRED){
 				this.playersRED.put(num, oPlayer);
 			}else if (team == DB.TEAMBLU){
 				this.playersBLU.put(num, oPlayer);
 			}
 		}
-	}
-	
-	public Player getPlayerByIndex(Integer index){
-		return this.players.get(index);
 	}
 	
 	public Player getPlayerByNum(Integer num, Integer team){
@@ -84,11 +68,15 @@ public class DB {
 		ArrayList<Player> ret = new ArrayList<Player>();
 		if (team == DB.TEAMRED){
 			for (Player x : this.playersRED.values()){
-				ret.add(x);
+				if (x.onIce){
+					ret.add(x);
+				}
 			}
 		}else if (team == DB.TEAMBLU){
 			for (Player x : this.playersBLU.values()){
-				ret.add(x);
+				if (x.onIce){
+					ret.add(x);
+				}
 			}
 		}
 		return ret;

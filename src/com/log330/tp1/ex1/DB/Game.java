@@ -53,6 +53,7 @@ public class Game {
 			this.scoreBLU++;
 		}
 		this.goals.add(new Goal(player, assist, assist2, period));
+		
 	}
 	
 	public ArrayList<String> getGoals(){
@@ -104,7 +105,10 @@ public class Game {
 		Entry<Player, Integer> two = new AbstractMap.SimpleEntry<Player, Integer>(null, 0);
 		Entry<Player, Integer> three = new AbstractMap.SimpleEntry<Player, Integer>(null, 0);
 		for (Entry<Player, Integer> x : points.entrySet()){
-			if (x.getValue() > one.getValue()){
+			if ((x.getValue() > one.getValue()) ||
+					(x.getValue() == one.getValue() && x.getKey().team == DB.getInstance().getWinner()) ||
+					(x.getValue() == x.getValue() && x.getKey().team != DB.getInstance().getWinner())
+					){
 				three = two;
 				two = one;
 				one = x;
