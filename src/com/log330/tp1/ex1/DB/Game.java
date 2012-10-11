@@ -81,12 +81,12 @@ public class Game {
 		
 		for (Goal x : this.goals){
 			if (points.get(x.scorer) != null){
-				points.put(x.scorer, points.get(x.scorer)+1);
+				points.put(x.scorer, points.get(x.scorer)+2);
 			}else{
 				points.put(x.scorer, 2);
 			}
 			if (goals.get(x.scorer) != null){
-				goals.put(x.scorer, goals.get(x.scorer)+2);
+				goals.put(x.scorer, goals.get(x.scorer)+1);
 			}else{
 				goals.put(x.scorer, 1);
 			}
