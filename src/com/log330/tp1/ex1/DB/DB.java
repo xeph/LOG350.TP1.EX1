@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 
 public class DB {
-	private static DB instance = new DB();
 	public static Integer TEAMRED = 1;
 	public static Integer TEAMBLU = 2;
 	private static Integer seq = 0;
@@ -15,8 +14,15 @@ public class DB {
 	private HashMap<Integer, Player> playersBLU = new HashMap<Integer, Player>();
 	private ArrayList<Game> oldGames = new ArrayList<Game>();
 	private Game game = new Game();
+	private static DB instance = new DB();
 	
 	private DB(){
+		this.setPlayer(10, "AAA", "111", DB.TEAMRED, true);
+		this.setPlayer(20, "BBB", "222", DB.TEAMRED, true);
+		this.setPlayer(30, "CCC", "333", DB.TEAMRED, true);
+		this.setPlayer(40, "DDD", "444", DB.TEAMBLU, true);
+		this.setPlayer(50, "EEE", "555", DB.TEAMBLU, true);
+		this.setPlayer(60, "FFF", "666", DB.TEAMBLU, true);
 	}
 	
 	public static DB getInstance(){
