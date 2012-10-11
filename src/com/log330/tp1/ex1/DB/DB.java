@@ -118,6 +118,10 @@ public class DB {
 		return this.game.nextPeriod();
 	}
 	
+	public Boolean isGameFinished(){
+		return (this.game.getPeriod() == Game.GAMEFINISHED);
+	}
+	
 	public Integer getWinner(){
 		return this.game.getWinner();
 	}
